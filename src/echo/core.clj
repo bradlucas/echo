@@ -7,7 +7,7 @@
 (defn handler [request]
   (let [s (with-out-str (pprint/pprint (conj request {:body (slurp (:body request))})))]
     {:status 200
-     :header {"Content-Type" "text/plain"}
+     :headers {"Content-Type" "text/plain"}
      :body   s}))
 
 (defn -main []
